@@ -18,11 +18,13 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-dotenv && react-scripts start",
+    "build": "react-dotenv && react-scripts build",
+    "serve": "react-dotenv && serve build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,7 +48,10 @@
   },
   "react-dotenv": {
     "whitelist": [
-      "PHONE_NUMBER","PAGE_ID","LINKEDIN_URL","GITHUB_URL"
+      "PHONE_NUMBER",
+      "PAGE_ID",
+      "LINKEDIN_URL",
+      "GITHUB_URL"
     ]
   }
 }
