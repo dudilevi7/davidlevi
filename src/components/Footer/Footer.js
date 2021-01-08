@@ -1,18 +1,18 @@
-import { Copyright, Face, Facebook, GitHub, Instagram, LinkedIn, WhatsApp } from '@material-ui/icons';
+import { Copyright, Face, Facebook, GitHub, LinkedIn, WhatsApp } from '@material-ui/icons';
 import React from 'react';
-import env from 'react-dotenv';
 import { useSelector } from 'react-redux';
+import { GITHUB_URL, LINKEDIN_URL, PAGE_ID, PHONE_NUMBER } from '../../env';
 import './Footer.css';
 
 const Footer = props => {
     const language = useSelector(state=>state.mainStore.language);
 
     const onWhatsappClick = ()=> {
-        const url = `https://api.whatsapp.com/send?phone=${env.PHONE_NUMBER}`;
+        const url = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}`;
         window.open(url).focus();
     }
     const onFacebookClick = () => {
-        const url = `https://www.facebook.com/profile.php?id=${env.PAGE_ID}`;
+        const url = `https://www.facebook.com/profile.php?id=${PAGE_ID}`;
         window.open(url).focus();
     }
     const onInstagramClick = () => {
@@ -20,11 +20,11 @@ const Footer = props => {
         window.open(url).focus();
     }
     const onLinkedinClick = () =>{
-        const url = `https://www.linkedin.com/in/${env.LINKEDIN_URL}`;
+        const url = `https://www.linkedin.com/in/${LINKEDIN_URL}`;
         window.open(url).focus();
     }
     const onGitHubClick = () => {
-        const url = `https://github.com/${env.GITHUB_URL}`;
+        const url = `https://github.com/${GITHUB_URL}`;
         window.open(url).focus();
     }
     const creditStyle = {display:'flex', flexDirection : language==='English' ? 'row' : 'row-reverse', alignItems:'center'}

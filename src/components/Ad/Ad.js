@@ -1,7 +1,7 @@
-import { Button, Typography } from '@material-ui/core';
-import React, { useEffect } from 'react';
+import { Typography } from '@material-ui/core';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { blackButtonStyle, blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
+import {  blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
 import { ad1EnPara, ad1EnTitle, ad1HebPara, ad1HebTitle } from '../../constants/strings';
 import  {isMobileOnly} from 'react-device-detect';
 import LDAdd from '../../customs/LDAd';

@@ -9,9 +9,7 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import mainReducer from './store/reducers'
-import { createLogger } from 'redux-logger';
 import Ad from './components/Ad/Ad';
-import env from 'react-dotenv';
 
 function App() {
   const rootReducer = combineReducers({

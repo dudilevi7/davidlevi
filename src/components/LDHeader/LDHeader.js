@@ -3,14 +3,14 @@ import logo from '../../imgs/David.png'
 import Bar from '../Bar/Bar';
 import enImg from '../../imgs/en.png';
 import hebImg from '../../imgs/heb.png';
-import {Close, Language, Phone} from  '@material-ui/icons'
+import {Close, Phone} from  '@material-ui/icons'
 import './LDHeader.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setLanguage } from '../../store/actions';
 import MenuIcon from '@material-ui/icons/Menu';
 import { DLColors } from '../../constants/DLColors';
 import { Drawer } from '@material-ui/core';
-import env from 'react-dotenv';
+import { PHONE_NUMBER } from '../../env';
 
 const LDHeader = () => {
     const [showDrawer,setShowDrawer] = useState(false);
@@ -32,7 +32,7 @@ const LDHeader = () => {
                 <img className="langImg" onClick = {updateLanguage.bind(this,"Hebrew")} src= {hebImg} alt="hebrew"/>
                 <img className="langImg" onClick = {updateLanguage.bind(this,"English")} src= {enImg} alt="english"/>
                 <div className = "phone">
-                   <a href = {`tel:${env.PHONE_NUMBER}`}>
+                   <a href = {`tel:${PHONE_NUMBER}`}>
                        <Phone htmlColor = "white" fontSize="small"/>
                     </a>
                 </div>

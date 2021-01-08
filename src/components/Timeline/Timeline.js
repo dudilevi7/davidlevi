@@ -11,7 +11,7 @@ import fifaILLogo from '../../imgs/timeline/fifail.png';
 import fifaImg from '../../imgs/timeline/fifaimage.jpg';
 import findClassVideo from '../../imgs/findclass.mp4';
 import { Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
-import { blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
+import { redButtonStyle } from '../../constants/DLStyles';
 import { DLColors } from '../../constants/DLColors';
 import './Timeline.css';
 

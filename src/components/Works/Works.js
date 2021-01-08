@@ -6,9 +6,8 @@ import {blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
 import LDCard from '../../customs/LDCard';
 import { enWorks, hebWorks } from '../../data/data';
 import { setSubject } from '../../store/actions';
-import {isMobileOnly} from 'react-device-detect'
 import './Works.css';
-import { DLColors } from '../../constants/DLColors';
+
 
 const Work = props => {
     const language = useSelector(state=>state.mainStore.language);
