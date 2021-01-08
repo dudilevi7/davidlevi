@@ -23,7 +23,7 @@
   "engines": {
     "npm": "6.12.1",
     "node": "12.13.1" 
-  }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
