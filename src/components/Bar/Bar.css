@@ -1,0 +1,23 @@
+.btnsContainer {
+    display: flex;
+    flex-direction: row;
+}
+.barBtn {
+    margin : 2px;
+    font-size: 17px;
+    padding: 5px;
+    cursor: pointer;
+}
+.barBtn:hover{
+    font-weight: bold;
+    border-bottom: 2px dotted #ccc;
+}
+@media only screen and (max-width: 750px) {
+    .btnsContainer{
+        flex-direction: column-reverse;
+    }
+    .barBtn{
+        font-weight: normal;
+        border-bottom: 2px dotted #ccc;
+    }
+}

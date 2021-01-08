@@ -1,0 +1,19 @@
+.contactContent{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+.inputStyle{
+    padding: 5px;
+    background-image: linear-gradient(to left,white,whitesmoke);
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin : 5px
+}
+@media only screen and (max-width: 750px) {
+    .contactContent{
+        padding-inline: 15px;
+    }
+}

@@ -1,0 +1,151 @@
+.footerContainer {
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: flex-end;
+    justify-content: space-around;
+    border-top: 1px solid #ccc;
+    bottom : 0px;
+    width: 100%;
+}
+.socialMedia{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: flex-end;
+    height: 40px;
+}
+.whatsapp {
+    background-color: #25D366;
+    padding : 5px 7px 5px 7px;
+    border-radius: 3px;
+    height: 40px;
+    margin : 0px 5px 0px 5px;
+    transition: height 1s;
+}
+.whatsapp:hover {
+    height: 55px;
+    opacity: 0.9;
+}
+.facebook {
+    background-color: #4267B2;
+    padding : 5px 7px 5px 7px;
+    border-radius: 3px;
+    height: 40px;
+    margin : 0px 5px 0px 5px;
+    transition: height 1s;
+}
+.facebook:hover{
+    height: 55px;
+    opacity: 0.9;
+}
+.linkedin{
+    background-color: #0e76a8;
+    padding : 5px 7px 5px 7px;
+    border-radius: 3px;
+    height: 40px;
+    margin : 0px 5px 0px 5px;
+    transition: height 1s;
+}
+.linkedin:hover{
+    height: 55px;
+    opacity: 0.9;
+}
+.instagram{
+    padding : 5px 7px 5px 7px;
+    border-radius: 3px;
+    height: 40px;
+    margin : 0px 5px 0px 5px;
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    transition: height 1s;
+}
+.instagram:hover{
+    height: 55px;
+    opacity: 0.9;
+
+}
+.github{
+    background-color: whitesmoke;
+    padding : 5px 7px 5px 7px;
+    border-radius: 3px;
+    height: 40px;
+    margin : 0px 5px 0px 5px;
+    transition: height 1s;
+}
+.github:hover{
+    height: 55px;
+    opacity: 0.9;
+}
+.stay{
+    cursor: text;
+    font-size: 17px;
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 21px;
+    box-shadow: 1px 0px 9px 0px #ccc inset;
+    border-radius: 5px;
+}
+.stay:hover{
+    opacity: 0.8;
+}
+@media only screen and (max-width: 750px) {
+    .footerContainer{
+        height: 50px;
+        justify-content: center;
+    }
+    .stay{
+        font-size: 13px;
+        font-weight: bold;
+        padding: 1px;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+    .whatsapp{ 
+        margin:1px;
+        padding: 25px 4px 2px 4px;
+    }
+    .whatsapp:hover{
+        height: 40px;
+    }
+    .facebook{
+        margin:1px;
+        padding: 25px 4px 2px 4px;
+    }
+    .facebook:hover{
+        height: 40px;
+    }
+    .instagram{
+        margin:1px;
+        padding: 25px 4px 2px 4px;
+    }
+    .instagram:hover{
+        height: 40px;
+    }
+    .linkedin{
+        margin:1px;
+        padding: 25px 4px 2px 4px;
+    }
+    .linkedin:hover{
+        height: 40px;
+    }
+    .github{
+        margin:1px;
+        padding: 25px 4px 2px 4px;
+    }
+    .github:hover{
+        height: 40px;
+    }
+    .copy{
+        font-size: 9px;
+      
+    }
+}
