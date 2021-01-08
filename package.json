@@ -20,6 +20,10 @@
     "redux-thunk": "^2.3.0",
     "web-vitals": "^0.2.4"
   },
+  "engines": {
+    "npm": "6.12.1",
+    "node": "12.13.1" 
+  }
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -43,13 +47,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "react-dotenv": {
-    "whitelist": [
-      "PHONE_NUMBER",
-      "PAGE_ID",
-      "LINKEDIN_URL",
-      "GITHUB_URL"
-    ]
   }
+ 
 }
