@@ -43,10 +43,6 @@ const Contact = props => {
     const alignStyle = {textAlign : language==='Hebrew'? 'right' : 'left'}
     const msgInputStyle = {...alignStyle,height:'70px' ,marginBottom:'10px' , resize : 'none'};
 
-    //strings 
-    const otherSubject = language==='English' ? "Enter other subject": 'הכניסו נושא אחר';
-    const jobInter = language==='English' ? 'Invitation for job interview' : 'זימון לראיון עבודה';
-    const helpCommunity = language === 'English' ? 'Community help ideas' : 'רעיונות תרומה לקהילה';
     /////////functions
  
     const onChangeSubject = event => {
@@ -81,18 +77,18 @@ const Contact = props => {
       else {
         setErrors([]);
         ///---------------------sendEmail-----------------///
-        // const response = await fetch('https://davidleviserver.herokuapp.com/contact',{
-				// method : 'post',
-				// headers : {'Content-Type': 'application/json; charset=utf-8','Accept-Language' : 'he'},
-				// body : JSON.stringify({
-				// 	email: email.toLowerCase(),
-				// 	name : name,
-        //   phone : phone,
-        //   subject : selectedSubject,
-				// 	message : message
-        // })});
-        // const resData = await response.json();
-        const resData = "success";
+        const response = await fetch('https://davidleviserver.herokuapp.com/contact',{
+				method : 'post',
+				headers : {'Content-Type': 'application/json; charset=utf-8','Accept-Language' : 'he'},
+				body : JSON.stringify({
+					email: email.toLowerCase(),
+					name : name,
+          phone : phone,
+          subject : selectedSubject,
+					message : message
+        })});
+        const resData = await response.json();
+        console.log('return',resData)
         resData==="success" ? setAlert("success") : setAlert("error")
       }
 
@@ -107,11 +103,7 @@ const Contact = props => {
                   <input type="phone" className="inputStyle" style = {alignStyle} placeholder={language==="Hebrew" ? 'פלאפון': 'Phone'} onChange={e=>setPhone(e.target.value)} maxLength={13}/>
                   <div></div>
                   <input type="text" className="inputStyle" style = {alignStyle} placeholder={language==="Hebrew" ? ' נושא הפנייה': 'Subject'} onChange={onChangeSubject} value={selectedSubject} size={34} required/>
-                  <select dir={language==='Hebrew' ? "rtl" : "ltr"} className="inputStyle" style = {alignStyle} defaultValue='' onChange={onChangeSubject}>
-                    <option value = '' >{otherSubject}</option>
-                    <option value = {jobInter}>{jobInter}</option>
-                    <option value = {helpCommunity}>{helpCommunity}</option>
-                  </select>
+                  
                <textarea type="text" className="inputStyle" style = {msgInputStyle} placeholder={language==="Hebrew" ? 'תוכן הודעה': 'Message'}  onChange={e=>setMessage(e.target.value)}/>
                <div style = {blackButtonStyle} onClick={onSubmitForm}>{language==='Hebrew' ? "שלח" : 'SEND'}</div>
                {errors.length>0? 

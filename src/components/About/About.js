@@ -8,7 +8,7 @@ import './About.css';
 
 const About = props => {
     const language = useSelector(state=>state.mainStore.language)
-    const checkStyle= {
+    const checkStyle = {
         display: 'flex',
         flexDirection : language==='English' ? 'row' : 'row-reverse',
         justifyContent : 'center',
@@ -80,11 +80,11 @@ const About = props => {
                             </div>
                       </div>
                         
-                        <Typography variant="body2">
+                        {/* <Typography variant="body2">
                         {language==='English'? "The goal is that every project or any kind of communiucation will be the highest level" : 
                                "מטרת האתר שכל פרוייקט/התקשרות כזאת או אחרת תהיה ברמה הכי גבוהה"
                         }
-                        </Typography>
+                        </Typography> */}
 
                  </div>
 
