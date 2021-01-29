@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {  blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
+import {  blueButtonStyle, greenButtonStyle } from '../../constants/DLStyles';
 import { ad1EnPara, ad1EnTitle, ad1HebPara, ad1HebTitle } from '../../constants/strings';
 import  {isMobileOnly} from 'react-device-detect';
 import LDAdd from '../../customs/LDAd';
@@ -33,8 +33,8 @@ const Ad = props => {
                  <div className="adTitle">{language==='English'? ad1EnTitle : ad1HebTitle}</div>
                   <Typography variant = "subtitle1">{language==='English'? ad1EnPara : ad1HebPara}</Typography>
                  <div style = {{display:'flex', flexDirection: language==='English'? 'row-reverse' : 'row',justifyContent:'center'}}>
-                    <div className = "adBtn" style = {blueButtonStyle} onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Let me see your works before' : 'תן לראות תיק עבודות לפני '}</div>
-                    <div className = "adBtn" style = {redButtonStyle} onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ? 'Yes I want!' : '!כן אני רוצה'}</div>
+                    <div className = "adBtn" style = {blueButtonStyle} onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</div>
+                    <div className = "adBtn" style = {greenButtonStyle} onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</div>
                  </div>
             
             </div>

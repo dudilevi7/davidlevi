@@ -8,9 +8,9 @@ export const blueButtonStyle = {cursor : 'pointer',backgroundColor : '#013298', 
 ,marginBottom : '10px' ,boxShadow:`0px 7px 0px 0px ${DLColors.darkBlue} inset`,marginRight:'5px',marginLeft:'5px',
 borderRadius:'5px',borderBottom :  `3px solid ${DLColors.darkBlue}`,padding : '10px'}
 
-export const redButtonStyle = {cursor : 'pointer',backgroundColor : '#D5212E', color : 'white',fontWeight:'normal'
-,marginBottom : '10px' ,boxShadow:`0px 7px 0px 0px ${DLColors.darkRed} inset`,marginRight:'5px',marginLeft:'5px',
-borderRadius:' 5px',borderBottom :  `3px solid ${DLColors.darkRed}`,padding : '10px'}
+export const greenButtonStyle = {cursor : 'pointer',backgroundColor : 'green', color : 'white',fontWeight:'normal'
+,marginBottom : '10px' ,boxShadow:`0px 7px 0px 0px ${DLColors.darkGreen} inset`,marginRight:'5px',marginLeft:'5px',
+borderRadius:' 5px',borderBottom :  `3px solid ${DLColors.darkGreen}`,padding : '10px'}
 
 export const errorStyle = language => ( {display : 'flex',flexDirection : language==='English' ?'row-reverse' :'row',justifyContent : 'space-between' , alignItems : 'center',backgroundColor : '#D5212E', color : 'white'
 ,marginBottom : '10px' ,boxShadow:`0px 4px 0px 0px ${DLColors.darkRed} inset`,

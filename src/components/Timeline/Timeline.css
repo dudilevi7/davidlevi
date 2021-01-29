@@ -1,6 +1,8 @@
 .timelineContainer{
     display: flex;
     justify-content: center;
+}
+.timeItem {
     cursor: pointer;
 }
 #videoID{

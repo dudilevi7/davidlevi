@@ -2,7 +2,7 @@
 import { ArrowDownward, Web } from '@material-ui/icons';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {blueButtonStyle, redButtonStyle } from '../../constants/DLStyles';
+import {blueButtonStyle, greenButtonStyle } from '../../constants/DLStyles';
 import LDCard from '../../customs/LDCard';
 import { enWorks, hebWorks } from '../../data/data';
 import { setSubject } from '../../store/actions';
@@ -12,7 +12,7 @@ import './Works.css';
 const Work = props => {
     const language = useSelector(state=>state.mainStore.language);
     const dispatch = useDispatch();
-    const redBtnStyle = {...redButtonStyle};
+    const greenBtnStyle = {...greenButtonStyle};
     const blueBtnStyle = {...blueButtonStyle};
     const [isLogo,setIsLogo] = useState(false);
     
@@ -38,7 +38,7 @@ const Work = props => {
                                         return <div key = {index} className="techTag"><bdi>{"#"+ tech}</bdi></div>
                                     })}
                                 </div>
-                                <div style = {{display:'flex' ,marginTop:'10px',color : '#ccc',}}>{props.data.year}</div>
+                                {/* <div style = {{display:'flex' ,marginTop:'10px',color : '#ccc',}}>{props.data.year}</div> */}
                         </div>
                         <div className = "workImgs">
                                 <img className="workImg" alt='logo' onMouseEnter={()=>setIsLogo(!isLogo)} onMouseOut={()=>setIsLogo(!isLogo)} onClick={visitSite.bind(this,props.data.url)}
@@ -46,7 +46,7 @@ const Work = props => {
                         </div>
                 </div>
                 <div className="workBtns" style={language==='English' ? {flexDirection:'row' } : {flexDirection:'row-reverse'} }>
-                    <div className = "workButton" style = {Object.assign(redBtnStyle,{flexDirection: language==='Hebrew' ?'row' : 'row-reverse'})} onClick={onWantBtnClicked.bind(this,props.data.type)}>
+                    <div className = "workButton" style = {Object.assign(greenBtnStyle,{flexDirection: language==='Hebrew' ?'row' : 'row-reverse'})} onClick={onWantBtnClicked.bind(this,props.data.type)}>
                        <ArrowDownward fontSize='small'/>  
                       <div>{language==='English' ? `I Want ${props.data.type}` : ` אני רוצה ${props.data.type}`} </div>
                     </div>

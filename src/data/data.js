@@ -37,7 +37,7 @@ export const enWorks = [
 export const hebWorks = [
     new Work('דף נחיתה מקצועי',
     'ישראל שלום - שירותי אינסטלציה',
-    'אתר בהתאמה לבעלי מקצוע עם דגש על נגישות , נראות  ושקיפות ',
+    'אתר בהתאמה אישית לבעלי מקצוע עם דגש על נגישות , נראות  ושקיפות ',
     '11/2020',['צד לקוח','React','Hooks','Material-UI','styled-components','npm libraries','תצוגת נייד'],
     'http://israelmeir.000webhostapp.com/',israelscreen,israellogo)
     ,
@@ -49,13 +49,13 @@ export const hebWorks = [
     ,
     new Work('אתר נתונים בזמן אמת',
     'Your News - חדשות בזמן אמת',
-    "אתר חדשות בזמן אמת שמאפשר לבחור קטגוריה ספציפית לקריאה , עם מערכת מזג האוויר לפי מיקום ולפי חיפוש , האתר כולל מצב קורונה בעולם ובישראל",
+    "אתר אקטואליה המתעדכן בזמן אמת ומאפשר לבחור קטגוריה ספציפית לקריאה , עם מערכת מזג האוויר לפי מיקום ולפי חיפוש , האתר כולל מצב קורונה בעולם ובישראל",
     '01-04/2020',['צד לקוח וצד שרת','React','Node.js','Redux','Hooks','Bootstrap','PostgreSQL','npm libraries','JSON',' תצוגת נייד'],
     'https://dudilevi7.github.io/yournews/',ynscreen,ynlogo)
     ,
     new Work('אתר משחק',
     "Who's that famous? אפליקציית ",
-    'העבודה הראשונה שלי עם ריאקט . משחק חידון עם שאלות מיוחדות על אנשים מפורסמים',
+    'משחק חידון עם שאלות מיוחדות על אנשים מפורסמים',
     '12/2019',['צד לקוח','React','Bootstrap','npm libraries','תמיכה בעברית ואנגלית'],
     'https://dudilevi7.github.io/whosthatfamous/',wtfscreen,wtflogo)
 ]

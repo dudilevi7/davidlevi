@@ -1,11 +1,14 @@
 
 .adTitle{
-    font-size: 6rem;
+    
+    font-size: 5.5rem;
     font-family:  "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
     letter-spacing: -0.07962em;
 }
-
+.adBtn:hover{
+ opacity: 0.8;   
+}
 .img1{
     display: block;
     width: 30%;

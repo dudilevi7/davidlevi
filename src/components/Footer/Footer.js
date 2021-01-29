@@ -49,7 +49,7 @@ const Footer = props => {
                         </div>
             </div>
            <div style={creditStyle}>
-           <h5 className="copy" style={{color:'#211F1F'}}>{language==='English'? 'Develop and Design by DAVID LEVI 2020' : '2020 פותח ועוצב על ידי דוד לוי '}</h5>
+           <h5 className="copy" style={{color:'#211F1F'}}>{language==='English'? 'Develop and Design by DAVID LEVI 2021' : '2021 פותח ועוצב על ידי דוד לוי '}</h5>
            <Copyright fontSize="small" htmlColor="#211F1F"/> 
                </div> 
         </div>
