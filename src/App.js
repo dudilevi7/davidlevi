@@ -20,8 +20,8 @@ function App() {
 
   return (
     <Provider store={store}>
-        <LDHeader />
       <div className="App">
+        <LDHeader />
         <Ad />
         <About />
         <Works />

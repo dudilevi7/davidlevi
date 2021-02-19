@@ -76,7 +76,7 @@ const Works = props => {
         <div id="worksID">
             <LDCard customStyle={style}>
                 {language === 'English' ? <div> W O R K S </div> : <div>ת י ק &nbsp;ע ב ו ד ו ת</div>}
-                <div style={{display:'flex',flexDirection:'row' , justifyContent:'space-evenly'}}>
+                <div className="worksContainer">
                 {works.map((work, index) => {
                     return <Work key={index} data={work} />
                 })}
