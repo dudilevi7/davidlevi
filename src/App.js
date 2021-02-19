@@ -10,9 +10,7 @@ import ReduxThunk from "redux-thunk";
 import { Provider } from "react-redux";
 import mainReducer from "./store/reducers";
 import Ad from "./components/Ad/Ad";
-//////David LEvi The king
 
-const [useState, setstate] = useState({ king: "David LEvi" });
 function App() {
   const rootReducer = combineReducers({
     mainStore: mainReducer,
@@ -22,8 +20,8 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="App">
         <LDHeader />
+      <div className="App">
         <Ad />
         <About />
         <Works />

@@ -2,7 +2,8 @@ import { Error } from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { blackButtonStyle, errorStyle } from '../../constants/DLStyles';
+import {errorStyle } from '../../constants/DLStyles';
+import LDButton from '../../customs/LDButton';
 import LDCard from '../../customs/LDCard';
 import { setSubject } from '../../store/actions';
 import './Contact.css';
@@ -105,7 +106,7 @@ const Contact = props => {
                   <input type="text" className="inputStyle" style = {alignStyle} placeholder={language==="Hebrew" ? ' נושא הפנייה': 'Subject'} onChange={onChangeSubject} value={selectedSubject} size={34} required/>
                   
                <textarea type="text" className="inputStyle" style = {msgInputStyle} placeholder={language==="Hebrew" ? 'תוכן הודעה': 'Message'}  onChange={e=>setMessage(e.target.value)}/>
-               <div style = {blackButtonStyle} onClick={onSubmitForm}>{language==='Hebrew' ? "שלח" : 'SEND'}</div>
+               <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#2F2F2F" bgColor2="#1B1B1B" onClick={onSubmitForm}>{language==='Hebrew' ? "שלח" : 'SEND'}</LDButton>
                {errors.length>0? 
                <div style = {{fontSize:'13px',marginTop:'10px', display:'flex', flexDirection:'column'}}>
                       {errors.map((error,index)=>{

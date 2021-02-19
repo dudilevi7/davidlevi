@@ -7,6 +7,7 @@ import  {isMobileOnly} from 'react-device-detect';
 import LDAdd from '../../customs/LDAd';
 import developerImg from '../../imgs/design2.png'
 import './Ad.css';
+import LDButton from '../../customs/LDButton';
 
 const Ad = props => {
     const language = useSelector(state=>state.mainStore.language);
@@ -33,8 +34,8 @@ const Ad = props => {
                  <div className="adTitle">{language==='English'? ad1EnTitle : ad1HebTitle}</div>
                   <Typography variant = "subtitle1">{language==='English'? ad1EnPara : ad1HebPara}</Typography>
                  <div style = {{display:'flex', flexDirection: language==='English'? 'row-reverse' : 'row',justifyContent:'center'}}>
-                    <div className = "adBtn" style = {blueButtonStyle} onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</div>
-                    <div className = "adBtn" style = {greenButtonStyle} onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</div>
+                 <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#013298" bgColor2="#000667" onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</LDButton>
+                 <LDButton size="small" color="white" shadow = "#ccc" bgColor1="green" bgColor2="#006400" onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</LDButton>
                  </div>
             
             </div>

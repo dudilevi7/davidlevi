@@ -13,7 +13,7 @@ import findClassVideo from '../../imgs/findclass.mp4';
 import { Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
 import { DLColors } from '../../constants/DLColors';
 import './Timeline.css';
-import { blackButtonStyle } from '../../constants/DLStyles';
+import LDButton from '../../customs/LDButton';
 
 const Timeline = props => {
     const [dialog,setDialog] = useState('');
@@ -111,7 +111,7 @@ const Timeline = props => {
                                     heyyyyyyyyy
                                 </DialogContent>
                                 <DialogActions>
-                                <div style={blackButtonStyle} onClick={()=>setDialog('')}>Close</div>
+                                <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#2F2F2F" bgColor2="#1B1B1B" onClick={()=>setDialog('')}>Close</LDButton>
                                 </DialogActions>
                         </Dialog> 
                     : (
@@ -132,7 +132,7 @@ const Timeline = props => {
                              <img src = {fifaImg} alt='ipl13' width="100%" height="100%"/>
                             </DialogContent>
                             <DialogActions>
-                            <div style={blackButtonStyle} onClick={()=>setDialog('')}>{language==='English'? 'Close' : 'סגור'}</div>
+                            <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#2F2F2F" bgColor2="#1B1B1B" onClick={()=>setDialog('')}>{language==='English'? 'Close' : 'סגור'}</LDButton>
                             </DialogActions>
                             </Dialog>
                     : null ))
