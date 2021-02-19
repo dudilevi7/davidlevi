@@ -11,6 +11,8 @@ import { Provider } from "react-redux";
 import mainReducer from "./store/reducers";
 import Ad from "./components/Ad/Ad";
 //////David LEvi The king
+
+const [useState, setstate] = useState({ king: "David LEvi" });
 function App() {
   const rootReducer = combineReducers({
     mainStore: mainReducer,
