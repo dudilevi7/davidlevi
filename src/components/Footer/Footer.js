@@ -1,4 +1,4 @@
-import { Copyright, Face, Facebook, GitHub, LinkedIn, WhatsApp } from '@material-ui/icons';
+import { Copyright, Facebook, GitHub, LinkedIn, WhatsApp } from '@material-ui/icons';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { GITHUB_URL, LINKEDIN_URL, PAGE_ID, PHONE_NUMBER } from '../../env';
@@ -34,9 +34,9 @@ const Footer = props => {
               <div className="stay">{language==='English'?  'Stay connected' : 'הישארו מחוברים'}</div> 
                     <div className = "whatsapp" onClick={onWhatsappClick} >
                         <WhatsApp htmlColor = "white"/></div>
-                    <div className = "facebook" onClick={onFacebookClick}>
+                    {/* <div className = "facebook" onClick={onFacebookClick}>
                             <Facebook htmlColor = "white"/>
-                        </div> 
+                        </div>  */}
                     {/* <div className ="instagram" onClick={onInstagramClick} >
                                 <Instagram htmlColor = "white"/>
                         </div> */}

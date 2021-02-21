@@ -34,8 +34,8 @@ const Ad = props => {
                  <div className="adTitle">{language==='English'? ad1EnTitle : ad1HebTitle}</div>
                   <Typography variant = "subtitle1">{language==='English'? ad1EnPara : ad1HebPara}</Typography>
                  <div style = {{display:'flex', flexDirection: language==='English'? 'row-reverse' : 'row',justifyContent:'center'}}>
-                 <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#013298" bgColor2="#000667" onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</LDButton>
-                 <LDButton size="small" color="white" shadow = "#ccc" bgColor1="green" bgColor2="#006400" onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</LDButton>
+                 <LDButton size="small" color="white"  bgColor1="#013298" bgColor2="#000667" onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</LDButton>
+                 <LDButton size="small" color="white"  bgColor1="green" bgColor2="#006400" onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</LDButton>
                  </div>
             
             </div>

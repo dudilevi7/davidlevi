@@ -26,7 +26,7 @@ const Work = props => {
         element.scrollIntoView({ block: 'start', behavior: 'smooth' })
     }
     return (
-        <Card className="workContainer" style={{maxWidth:'325px'}}>
+        <Card className="workContainer">
             <CardActionArea>
                 <CardMedia
                     component="img"

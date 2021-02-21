@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top : 40px;
+    max-width: 325px;
 }
 .workType {
     color :#1B1B1B;
@@ -73,13 +74,13 @@
 }
 @media only screen and (max-width: 750px) {
     .worksContainer {
-        /* style={{display:'flex',flexDirection:'row' , justifyContent:'space-evenly'}} */
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        align-items: center;
     }
     .workContainer{
         margin-top: 10px;
+        margin-bottom: 20px;
     }
     .workContent{
         flex-direction: column;
