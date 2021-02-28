@@ -29,6 +29,7 @@ const Work = props => {
         <Card className="workContainer">
             <CardActionArea>
                 <CardMedia
+                    className="workImg"
                     component="img"
                     image={props.data.screenshot}
                     onClick={visitSite.bind(this,props.data.url)}
@@ -77,11 +78,10 @@ const Works = props => {
             <LDCard customStyle={style}>
                 {language === 'English' ? <div> W O R K S </div> : <div>ת י ק &nbsp;ע ב ו ד ו ת</div>}
                 <div className="worksContainer">
-                {works.map((work, index) => {
-                    return <Work key={index} data={work} />
-                })}
+                            {works.map((work, index) => {
+                            return <Work key={index} data={work} />
+                              })}
                 </div>
-               
             </LDCard>
         </div>
 

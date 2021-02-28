@@ -29,9 +29,9 @@
     justify-content:center;
 }
 
-.workImg{
-    display: block;
-    box-shadow: 0px 1px 15px 7px whitesmoke;
+.workImg:hover{
+    transform: scale(1.1,1.1);
+    transition: transform 5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
 .workName{
@@ -104,8 +104,9 @@
     .workImg{
         display: none;
     }
-    .workImgs{
-        align-items: center;
+    .workImg:hover{
+        transition: none;
+        transform: none;
     }
     .workButton {
         font-size: 13px;

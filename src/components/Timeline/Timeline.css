@@ -5,9 +5,20 @@
 .timeItem {
     cursor: pointer;
 }
+.contentItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contentItem2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 #videoID{
     width: 320px;
     height: 240px;
+    cursor: pointer;
 }
 .bscFacebook{
     width: 552px;

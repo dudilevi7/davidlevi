@@ -44,7 +44,7 @@ const Timeline = props => {
                                 <TimelineConnector />
                             </TimelineSeparator>
                                 <TimelineContent className="timeItem">
-                                  <div style = {{display:'flex',flexDirection:'column',alignItems:'flex-start'}}> 
+                                  <div className="contentItem"> 
                                       <strong>{language==='English'? 'David Levi Developer' : 'דוד לוי מתכנת'}</strong>
                                       <div>{language==='English'? 'Client & Server side' : 'צד לקוח וצד שרת'}</div>
                                         <div>2020 - </div>
@@ -60,11 +60,11 @@ const Timeline = props => {
                                 <TimelineConnector/>
                             </TimelineSeparator>
                                 <TimelineContent>
-                                  <div className="timeItem" style = {{display:'flex',flexDirection:'column',alignItems:'flex-end'}}> 
-                                      <strong onClick={onFindClassClicked}>{language==='English'? 'FindClass App' : 'FindClass אפליקציית'} </strong>
-                                      <div onClick={onFindClassClicked}>{language==='English'? 'App for students audience that offer logistic solution of classrooms in colleges' : "אפליקציה לקהל הסטודנטים שמהווה פתרון לוגיסטי לכיתות לימוד במכללה"}</div>
-                                      <div onClick={onFindClassClicked}>{language==='English'? 'April 2019 - July 2019 ' : "אפריל 2019 - יולי 2019 "}</div>
-                                      <GitHub htmlColor="#211F1F" onClick={()=>window.open('https://github.com/dudilevi7/FindClass')}/>
+                                  <div className="contentItem2"> 
+                                      <strong className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'FindClass App' : 'FindClass אפליקציית'} </strong>
+                                      <div className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'App for students audience that offer logistic solution of classrooms in colleges' : "אפליקציה לקהל הסטודנטים שמהווה פתרון לוגיסטי לכיתות לימוד במכללה"}</div>
+                                      <div className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'April 2019 - July 2019 ' : "אפריל 2019 - יולי 2019 "}</div>
+                                      <GitHub className="timeItem" htmlColor="#211F1F" onClick={()=>window.open('https://github.com/dudilevi7/FindClass')}/>
                                         <video id="videoID" allowFullScreen controls>
                                             <source src = {findClassVideo} type ="video/mp4"/>
                                         </video>
@@ -79,11 +79,13 @@ const Timeline = props => {
                                 </TimelineDot>
                                 <TimelineConnector/>
                             </TimelineSeparator>
-                                <TimelineContent><div style = {{display:'flex',flexDirection:'column',alignItems:'flex-start'}}> 
-                                      <strong>{language==='English'?'BSc Computer Science' : 'בוגר תואר ראשון במדעי המחשב'}</strong>
-                                      <div>{language==='English'?'Holon Institute Technology' : 'HIT המכון הטכנולוגי חולון'}</div>
-                                        <div>2016 - 2019 </div>
-                                    </div>  </TimelineContent>
+                                <TimelineContent>
+                                        <div className = "contentItem"> 
+                                        <strong>{language==='English'?'BSc Computer Science' : 'בוגר תואר ראשון במדעי המחשב'}</strong>
+                                        <div>{language==='English'?'Holon Institute Technology' : 'HIT המכון הטכנולוגי חולון'}</div>
+                                            <div>2016 - 2019 </div>
+                                        </div>  
+                                    </TimelineContent>
                         </TimelineItem>
 
                         <TimelineItem>
@@ -93,11 +95,12 @@ const Timeline = props => {
                                 </TimelineDot>
                             </TimelineSeparator>
                                 <TimelineContent>
-                                    <div style = {{display:'flex',flexDirection:'column',alignItems:'flex-end'}}> 
+                                    <div className="contentItem2">
                                       <strong className="timeItem" onClick={()=>setDialog('FIFAIL')}>{language==='English'?'FIFA-IL Site manager & creator' : 'מנהל ויוצר באתר פיפא אי אל'}</strong>
                                         <div className="timeItem" onClick={()=>setDialog('FIFAIL')}>2009 - 2013 </div>
                                         <Facebook className="timeItem" htmlColor="#4267B2" onClick={()=>window.open('https://www.facebook.com/FIFAIL1')}/>
-                                    </div>  </TimelineContent>
+                                    </div>  
+                                </TimelineContent>
                         </TimelineItem>
                         
                         
@@ -111,7 +114,7 @@ const Timeline = props => {
                                     heyyyyyyyyy
                                 </DialogContent>
                                 <DialogActions>
-                                <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#2F2F2F" bgColor2="#1B1B1B" onClick={()=>setDialog('')}>Close</LDButton>
+                                <LDButton size="small" color="white" shadow = "#ccc" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={()=>setDialog('')}>Close</LDButton>
                                 </DialogActions>
                         </Dialog> 
                     : (
@@ -132,7 +135,7 @@ const Timeline = props => {
                              <img src = {fifaImg} alt='ipl13' width="100%" height="100%"/>
                             </DialogContent>
                             <DialogActions>
-                            <LDButton size="small" color="white" shadow = "#ccc" bgColor1="#2F2F2F" bgColor2="#1B1B1B" onClick={()=>setDialog('')}>{language==='English'? 'Close' : 'סגור'}</LDButton>
+                            <LDButton size="small" color="white" shadow = "#ccc" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={()=>setDialog('')}>{language==='English'? 'Close' : 'סגור'}</LDButton>
                             </DialogActions>
                             </Dialog>
                     : null ))

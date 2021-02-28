@@ -3,7 +3,7 @@ import React from 'react';
 
 const useStyles = makeStyles({
     root : {
-        backgroundImage : props=> `linear-gradient(180deg,${props.bgColor1} 30%,${props.bgColor2} 70%)`,
+        backgroundImage : props=> `linear-gradient(180deg,${props.bgcolor1} 30%,${props.bgcolor2} 70%)`,
         border : props=> `1px solid ${props.border}`,
         borderRadius : 3,
         color : props => `${props.color}`,
@@ -14,14 +14,14 @@ const useStyles = makeStyles({
 })
 
 const LDButton = props => {
-    const {...other} = props;
+    const {color,...other} = props;
     const classes = useStyles(props);
     return <Button className = {classes.root} {...other}/>
 }
 LDButton.defaultProps = {
     color : 'black',
-    bgColor1 : 'white',
-    bgColor2 : 'white',
+    bgcolor1 : 'white',
+    bgcolor2 : 'white',
     shadow : 'white',
     border : 'transparent'
 }

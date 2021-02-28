@@ -36,7 +36,7 @@ export const enWorks = [
 
 export const hebWorks = [
     new Work('דף נחיתה מקצועי',
-    'ישראל שלום - שירותי אינסטלציה',
+    'ישראל מאיר - שירותי אינסטלציה',
     'אתר בהתאמה אישית לבעלי מקצוע עם דגש על נגישות , נראות  ושקיפות ',
     '11/2020',['צד לקוח','React','Hooks','Material-UI','styled-components','npm libraries','תצוגת נייד'],
     'http://israelmeir.000webhostapp.com/',israelscreen,israellogo)

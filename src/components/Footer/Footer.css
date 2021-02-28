@@ -92,9 +92,6 @@
     box-shadow: 1px 0px 9px 0px #ccc inset;
     border-radius: 5px;
 }
-.stay:hover{
-    opacity: 0.8;
-}
 @media only screen and (max-width: 750px) {
     .footerContainer{
         height: 50px;

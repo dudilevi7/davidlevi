@@ -1,7 +1,6 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {  blueButtonStyle, greenButtonStyle } from '../../constants/DLStyles';
 import { ad1EnPara, ad1EnTitle, ad1HebPara, ad1HebTitle } from '../../constants/strings';
 import  {isMobileOnly} from 'react-device-detect';
 import LDAdd from '../../customs/LDAd';
@@ -29,18 +28,17 @@ const Ad = props => {
     
     return(
         <LDAdd customStyle = {adStyle}>
-            <div style={{display:'flex',flexDirection:'column'}}>
-            <img className="img1mobile" alt = "img1mobile" src={developerImg}/>
+            <div className = "adContainer">
+                 <img className="img1mobile" alt = "img1mobile" src={developerImg}/>
                  <div className="adTitle">{language==='English'? ad1EnTitle : ad1HebTitle}</div>
-                  <Typography variant = "subtitle1">{language==='English'? ad1EnPara : ad1HebPara}</Typography>
+                 <Typography variant = "subtitle1">{language==='English'? ad1EnPara : ad1HebPara}</Typography>
                  <div style = {{display:'flex', flexDirection: language==='English'? 'row-reverse' : 'row',justifyContent:'center'}}>
-                 <LDButton size="small" color="white"  bgColor1="#013298" bgColor2="#000667" onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</LDButton>
-                 <LDButton size="small" color="white"  bgColor1="green" bgColor2="#006400" onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</LDButton>
+                      <LDButton size="small" color="white"  bgcolor1="#013298" bgcolor2="#000667" onClick={onButtonClick.bind(this,'worksID')}>{language==="English" ? 'Interested to see works portfolio' : 'מעוניין לראות תיק עבודות'}</LDButton>
+                      <LDButton size="small" color="white"  bgcolor1="green" bgcolor2="#006400" onClick={onButtonClick.bind(this,'contactID')}>{language==="English" ?"Click here and we'll talk!" : '!לחץ כאן ונדבר'}</LDButton>
                  </div>
             
             </div>
             <img className="img1" alt="img1" src = {developerImg}/>
-          
         </LDAdd>
     )
 }
