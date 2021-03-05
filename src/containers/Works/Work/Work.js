@@ -1,21 +1,18 @@
 
-import { Card, CardActionArea, CardActions, CardContent, CardMedia } from '@material-ui/core';
-import LDButton from '../../customs/LDButton'
-import { ArrowDownward, Language } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import LDCard from '../../customs/LDCard';
-import { enWorks, hebWorks } from '../../data/data';
-import { setSubject } from '../../store/actions';
-import './Works.css';
-
+import { setSubject } from '../../../store/actions';
+import { Card, CardActionArea, CardActions, CardContent, CardMedia } from '@material-ui/core';
+import LDButton from '../../../components/customs/LDButton'
+import { ArrowDownward, Language } from '@material-ui/icons';
+import '../Works.css';
 
 const Work = props => {
     const language = useSelector(state => state.mainStore.language);
+    const strings = useSelector(state => state.mainStore.langStrings.work);
+
     const dispatch = useDispatch();
    
-    const [isLogo, setIsLogo] = useState(false);
-
     const visitSite = (url) => {
         window.open(url);
     }
@@ -50,41 +47,17 @@ const Work = props => {
                 <LDButton size="small" color="#013298" onClick={visitSite.bind(this,props.data.url)}>
                  <div className="workButton" style={{flexDirection: language==='Hebrew' ?'row' : 'row-reverse'}}>
                     <Language fontSize="small"/>
-                    <div>{language==='English'? `Visit on web` : `בקר באתר`}  </div> 
+                    <div>{strings.btn1}</div> 
                  </div>
                 </LDButton>
                 <LDButton size="small" color="green" onClick={onWantBtnClicked.bind(this,props.data.type)}>
                     <div className="workButton" style={{flexDirection: language==='Hebrew' ?'row' : 'row-reverse'}}>
                         <ArrowDownward fontSize='small'/>
-                        <div>{language==='English' ? `I Want ${props.data.type}` : ` אני רוצה ${props.data.type}`} </div>
+                        <div>{`${strings.btn2} ${props.data.type}`} </div>
                     </div>
                 </LDButton>
             </CardActions>
         </Card>
-    )
+    );
 }
-
-const Works = props => {
-    const language = useSelector(state => state.mainStore.language);
-
-    const style = {
-        backgroundColor: 'white',
-    };
-
-    const works = language === 'English' ? enWorks : hebWorks;
-
-    return (
-        <div id="worksID">
-            <LDCard customStyle={style}>
-                {language === 'English' ? <div> W O R K S </div> : <div>ת י ק &nbsp;ע ב ו ד ו ת</div>}
-                <div className="worksContainer">
-                            {works.map((work, index) => {
-                            return <Work key={index} data={work} />
-                              })}
-                </div>
-            </LDCard>
-        </div>
-
-    )
-}
-export default Works;
+export default Work;

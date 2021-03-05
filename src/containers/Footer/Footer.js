@@ -6,6 +6,7 @@ import './Footer.css';
 
 const Footer = props => {
     const language = useSelector(state=>state.mainStore.language);
+    const strings =  useSelector(state=>state.mainStore.langStrings.footer);
 
     const onWhatsappClick = ()=> {
         const url = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}`;
@@ -31,7 +32,7 @@ const Footer = props => {
     return (
         <div className = "footerContainer" style = {language==='Hebrew'? {flexDirection:'row-reverse'} : null}>
             <div className="socialMedia" style = {language==='Hebrew'? {flexDirection:'row-reverse'} : null} >
-              <div className="stay">{language==='English'?  'Stay connected' : 'הישארו מחוברים'}</div> 
+              <div className="stay">{strings.stay}</div> 
                     <div className = "whatsapp" onClick={onWhatsappClick} >
                         <WhatsApp htmlColor = "white"/></div>
                     {/* <div className = "facebook" onClick={onFacebookClick}>
@@ -49,7 +50,7 @@ const Footer = props => {
                         </div>
             </div>
            <div style={creditStyle}>
-           <h5 className="copy" style={{color:'#211F1F'}}>{language==='English'? 'Develop and Design by DAVID LEVI 2021' : '2021 פותח ועוצב על ידי דוד לוי '}</h5>
+           <h5 className="copy" style={{color:'#211F1F'}}>{strings.allRights}</h5>
            <Copyright fontSize="small" htmlColor="#211F1F"/> 
                </div> 
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import LDCard from '../../customs/LDCard';
+import LDCard from '../../components/customs/LDCard';
 import TimelineMUI from '@material-ui/lab/Timeline';
 import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from '@material-ui/lab';
 import { Facebook, GitHub } from '@material-ui/icons';
@@ -10,19 +10,22 @@ import findClassIcon from '../../imgs/timeline/findclass.png';
 import fifaILLogo from '../../imgs/timeline/fifail.png';
 import fifaImg from '../../imgs/timeline/fifaimage.jpg';
 import findClassVideo from '../../imgs/findclass.mp4';
-import { Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Typography } from '@material-ui/core';
 import { DLColors } from '../../constants/DLColors';
 import './Timeline.css';
-import LDButton from '../../customs/LDButton';
+import LDButton from '../../components/customs/LDButton';
 
 const Timeline = props => {
     const [dialog,setDialog] = useState('');
     const [play,setPlay] = useState(false);
-    const language = useSelector(state=> state.mainStore.language);
+
+    const strings = useSelector(state=>state.mainStore.langStrings.timeline);
+
     const style = {
         backgroundColor :'whitesmoke',
         display : 'flex',
         flexDirection : 'column',
+        height:'100vh',
         padding : '25px 3px 25px 3px',
         borderRadius:'0px'
     }
@@ -34,7 +37,7 @@ const Timeline = props => {
     return (
         <div id = "timeID">
             <LDCard customStyle = {style}>
-                {language==='English'? <div> T I M E L I N E </div> : <div>צ י ר &nbsp;ז מ ן </div>}
+            <Typography className="title" variant = "h3">{strings.title}</Typography>
                     <TimelineMUI className="timelineContainer" align="alternate">
                         <TimelineItem onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}> 
                             <TimelineSeparator>
@@ -45,8 +48,8 @@ const Timeline = props => {
                             </TimelineSeparator>
                                 <TimelineContent className="timeItem">
                                   <div className="contentItem"> 
-                                      <strong>{language==='English'? 'David Levi Developer' : 'דוד לוי מתכנת'}</strong>
-                                      <div>{language==='English'? 'Client & Server side' : 'צד לקוח וצד שרת'}</div>
+                                      <strong>{strings.item1.title}</strong>
+                                      <div>{strings.item1.subtitle}</div>
                                         <div>2020 - </div>
                                     </div> 
                                 </TimelineContent>
@@ -61,10 +64,10 @@ const Timeline = props => {
                             </TimelineSeparator>
                                 <TimelineContent>
                                   <div className="contentItem2"> 
-                                      <strong className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'FindClass App' : 'FindClass אפליקציית'} </strong>
-                                      <div className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'App for students audience that offer logistic solution of classrooms in colleges' : "אפליקציה לקהל הסטודנטים שמהווה פתרון לוגיסטי לכיתות לימוד במכללה"}</div>
-                                      <div className="timeItem" onClick={onFindClassClicked}>{language==='English'? 'April 2019 - July 2019 ' : "אפריל 2019 - יולי 2019 "}</div>
-                                      <GitHub className="timeItem" htmlColor="#211F1F" onClick={()=>window.open('https://github.com/dudilevi7/FindClass')}/>
+                                        <strong className="timeItem" onClick={onFindClassClicked}>{strings.item2.title} </strong>
+                                        <div className="timeItem" onClick={onFindClassClicked}>{strings.item2.subtitle}</div>
+                                        <div className="timeItem" onClick={onFindClassClicked}>{strings.item2.era}</div>
+                                        <GitHub className="timeItem" htmlColor="#211F1F" onClick={()=>window.open('https://github.com/dudilevi7/FindClass')}/>
                                         <video id="videoID" allowFullScreen controls>
                                             <source src = {findClassVideo} type ="video/mp4"/>
                                         </video>
@@ -81,8 +84,8 @@ const Timeline = props => {
                             </TimelineSeparator>
                                 <TimelineContent>
                                         <div className = "contentItem"> 
-                                        <strong>{language==='English'?'BSc Computer Science' : 'בוגר תואר ראשון במדעי המחשב'}</strong>
-                                        <div>{language==='English'?'Holon Institute Technology' : 'HIT המכון הטכנולוגי חולון'}</div>
+                                        <strong>{strings.item3.title}</strong>
+                                        <div>{strings.item3.subtitle}</div>
                                             <div>2016 - 2019 </div>
                                         </div>  
                                     </TimelineContent>
@@ -91,12 +94,12 @@ const Timeline = props => {
                         <TimelineItem>
                             <TimelineSeparator>
                                 <TimelineDot variant="outlined" color="grey" >
-                                <img className="timeItem" style={{width:'20px',borderRadius:'10px'}} src={fifaILLogo} alt="fifa" onClick={()=>setDialog('FIFAIL')}/>
+                                    <img className="timeItem" style={{width:'20px',borderRadius:'10px'}} src={fifaILLogo} alt="fifa" onClick={()=>setDialog('FIFAIL')}/>
                                 </TimelineDot>
                             </TimelineSeparator>
                                 <TimelineContent>
                                     <div className="contentItem2">
-                                      <strong className="timeItem" onClick={()=>setDialog('FIFAIL')}>{language==='English'?'FIFA-IL Site manager & creator' : 'מנהל ויוצר באתר פיפא אי אל'}</strong>
+                                      <strong className="timeItem" onClick={()=>setDialog('FIFAIL')}>{strings.item4.title}</strong>
                                         <div className="timeItem" onClick={()=>setDialog('FIFAIL')}>2009 - 2013 </div>
                                         <Facebook className="timeItem" htmlColor="#4267B2" onClick={()=>window.open('https://www.facebook.com/FIFAIL1')}/>
                                     </div>  
@@ -124,19 +127,14 @@ const Timeline = props => {
                     : ( 
                         dialog==='FIFAIL'? 
                         <Dialog open onClose={()=>setDialog('')} keepMounted>
-                            <DialogTitle style={{backgroundColor:DLColors.lightBlack,color:'white'}}>{language==='English' ? 'FIFA-IL' : 'פיפא אי-אל'}</DialogTitle>
-                            <DialogContent >
-                            <p style={{textAlign: 'center'}}>
-                                {language==='English'? 
-                                "Site leader and creator in FIFA-IL.com website. I created above 50 patches at that time include IPL'S patches (2009-2012). IPL was patch that added the Israeli Premier League to the famous game FIFA . I worked with graphics files and huge database . It was my amazing success , between 200,000-300,000 downloads to each patch."
-                                : "מנהל ויוצר באתר פיפא אי-אל בניתי מעל ל50 פאצ'ים (תוספות למשחק) במהלך התקופה כולל המגה פאץ' - להוספת הליגה הישראלית למשחק הכדורגל המפורסם - פיפ''א . עבדתי בעיקר עם מסדי נתונים ענקיים וקבצי גרפיקה והתאמתם לזירה המקומית . הפאצ'ים זכו להצלחה אדירה של 200,000-300,000 הורדות בכל שנה"
-                                }
-                            </p>
-                             <img src = {fifaImg} alt='ipl13' width="100%" height="100%"/>
-                            </DialogContent>
-                            <DialogActions>
-                            <LDButton size="small" color="white" shadow = "#ccc" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={()=>setDialog('')}>{language==='English'? 'Close' : 'סגור'}</LDButton>
-                            </DialogActions>
+                                <DialogTitle style={{backgroundColor:DLColors.lightBlack,color:'white'}}>{strings.item4.dialog.title}</DialogTitle>
+                                <DialogContent >
+                                    <p style={{textAlign: 'center'}}> {strings.item4.dialog.para}</p>
+                                    <img src = {fifaImg} alt='ipl13' width="100%" height="100%"/>
+                                </DialogContent>
+                                <DialogActions>
+                                    <LDButton size="small" color="white" shadow = "#ccc" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={()=>setDialog('')}>{strings.item4.dialog.btn}</LDButton>
+                                </DialogActions>
                             </Dialog>
                     : null ))
                     }

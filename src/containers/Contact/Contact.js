@@ -1,12 +1,12 @@
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, Typography } from '@material-ui/core';
 import { Error } from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 import React, { useEffect, useReducer, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import LDButton from '../../customs/LDButton';
-import LDCard from '../../customs/LDCard';
-import LDError from '../../customs/LDError';
-import LDTextField from '../../customs/LDTextField';
+import LDButton from '../../components/customs/LDButton';
+import LDCard from '../../components/customs/LDCard';
+import LDError from '../../components/customs/LDError';
+import LDTextField from '../../components/customs/LDTextField';
 import { setSubject } from '../../store/actions';
 import './Contact.css';
 
@@ -40,6 +40,8 @@ const Contact = props => {
 
     const language = useSelector(state=>state.mainStore.language);
     const selectedSubject = useSelector(state=>state.mainStore.subject);
+    const strings = useSelector(state=>state.mainStore.langStrings.contact);
+
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -59,7 +61,7 @@ const Contact = props => {
         display : 'flex',
         flexDirection : 'column',
         alignItems : 'center',
-        margin : '0px 0px 78px 0px',
+        height: '100vh',
         padding : '25px 3px 25px 3px',
         borderRadius:'0px'
     }
@@ -85,21 +87,22 @@ const Contact = props => {
       let updatedErrors = [];
       
       if (state.name.length<1 || state.email.length<1 || state.phone.length<1 || state.message.length<1 || selectedSubject.length<1){
-        updatedErrors.push(language === 'English' ? 'Some input is empty' : 'נא למלא את כל הטופס')
+        updatedErrors.push(strings.errors[0])
       }
     
        if (!emailCheck.test(state.email)) {
-         updatedErrors.push(language === 'English' ? 'Fix your email address' : 'נא לתקן את כתובת המייל')
+         updatedErrors.push(strings.errors[1])
         }
       
        if (!(state.phone.match(phoneCheck))){
-        updatedErrors.push(language === 'English' ? 'Fix your phone' : 'נא לתקן את מספר הפלאפון')
+        updatedErrors.push(strings.errors[2])
       }
        if (!(state.name.match(lettersCheck))){
-        updatedErrors.push(language === 'English' ? 'Fix your name - only with letters' : 'נא לתקן את השם  - רק באותיות')
+        updatedErrors.push(strings.errors[3])
       }
       return updatedErrors;
     }
+
     const onSubmitForm = async () => {
       let newErrors = valdiateForm();
       if(newErrors.length>0)
@@ -127,14 +130,14 @@ const Contact = props => {
     return (
       <div id = "contactID">
         <LDCard customStyle = {style}>
-           {language==='English'? 'C O N T A C T' : <div>צ ו ר &nbsp;ק ש ר </div>}
+          <Typography className="title" variant = "h3">{strings.title}</Typography>
            <div className="contactContent">
-                  <LDTextField name ="name" type = "text" align={alignStyle} label={language==="Hebrew" ? 'שם': 'Name'} onChange={textChangeHandler} bgcolor2="whitesmoke"/> 
-                  <LDTextField name = "email" type = "email" align={alignStyle} label={language==="Hebrew" ? 'מייל': 'Email'} onChange={textChangeHandler} bgcolor2="whitesmoke"/>
-                  <LDTextField name = "phone" type = "phone" align={alignStyle} label={language==="Hebrew" ? 'פלאפון': 'Phone'} onChange={textChangeHandler} bgcolor2="whitesmoke"/>
-                  <LDTextField name = "subject" type = "text" align={alignStyle} label={language==="Hebrew" ? ' נושא הפנייה': 'Subject'} onChange={textChangeHandler} value={selectedSubject} bgcolor2="whitesmoke"/>
-                  <LDTextField name ="message" type = "text" multiline rows="3" align={alignStyle} label={language==="Hebrew" ? 'תוכן הודעה': 'Message'}  onChange={textChangeHandler} bgcolor2="whitesmoke"/>
-                  <LDButton size="small" color="white" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={onSubmitForm}>{language==='Hebrew' ? "שלח" : 'SEND'}</LDButton>
+                  <LDTextField name ="name" type = "text" align={alignStyle} label={strings.name} onChange={textChangeHandler} bgcolor2="whitesmoke"/> 
+                  <LDTextField name = "email" type = "email" align={alignStyle} label={strings.email} onChange={textChangeHandler} bgcolor2="whitesmoke"/>
+                  <LDTextField name = "phone" type = "phone" align={alignStyle} label={strings.phone} onChange={textChangeHandler} bgcolor2="whitesmoke"/>
+                  <LDTextField name = "subject" type = "text" align={alignStyle} label={strings.subject} onChange={textChangeHandler} value={selectedSubject} bgcolor2="whitesmoke"/>
+                  <LDTextField name ="message" type = "text" multiline rows="3" align={alignStyle} label={strings.message}  onChange={textChangeHandler} bgcolor2="whitesmoke"/>
+                  <LDButton size="small" color="white" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={onSubmitForm}>{strings.btn}</LDButton>
                {errors.length>0 &&
                <div className = "errorContainer">
                       {errors.map((error,index) => {
@@ -147,18 +150,12 @@ const Contact = props => {
                  
            </div>
            {alert==='success' ? 
-                  <Alert variant="filled" severity="success" onClose={()=>setAlert('')}>
-                    {language==='English'? 'The message send successfuly! '
-                    : '!ההודעה נשלחה בהצלחה '}
-                  </Alert> 
+                  <Alert variant="filled" severity="success" onClose={()=>setAlert('')}>{strings.alert1} </Alert> 
                  : (
                   alert==="error" ? 
-                    <Alert variant="filled" severity="error" onClose={()=>setAlert('')}>
-                          {language==='English'? "There is system error"
-                        : 'ישנה תקלה בשליחת ההודעה'}
-                      </Alert> 
+                    <Alert variant="filled" severity="error" onClose={()=>setAlert('')}>{strings.alert2}</Alert> 
                  : (alert==='progress'?
-                       <CircularProgress/> 
+                     <CircularProgress/> 
                       : null)
                  )
            }

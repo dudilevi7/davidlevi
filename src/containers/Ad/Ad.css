@@ -1,6 +1,8 @@
 .adContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 .adTitle{
     font-size: 5.5rem;
@@ -13,7 +15,7 @@
 }
 .img1{
     display: block;
-    width: 30%;
+    width: 50%;
 }
 .img1mobile{
     display: none;

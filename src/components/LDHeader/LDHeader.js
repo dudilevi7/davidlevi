@@ -4,13 +4,13 @@ import Bar from '../Bar/Bar';
 import enImg from '../../imgs/en.png';
 import hebImg from '../../imgs/heb.png';
 import {Close, Phone} from  '@material-ui/icons'
-import './LDHeader.css';
 import { useDispatch } from 'react-redux';
 import { setLanguage } from '../../store/actions';
 import MenuIcon from '@material-ui/icons/Menu';
 import { DLColors } from '../../constants/DLColors';
 import { Drawer } from '@material-ui/core';
 import { PHONE_NUMBER } from '../../env';
+import './LDHeader.css';
 
 const LDHeader = () => {
     const [showDrawer,setShowDrawer] = useState(false);
