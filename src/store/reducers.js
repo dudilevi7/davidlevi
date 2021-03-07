@@ -2,9 +2,9 @@ import { SET_LANGUAGE, SET_SUBJECT } from "./actions"
 import strings  from '../constants/strings';
 
 const intialState = {
-    language : 'Hebrew',
+    language : 'English',
     subject : '',
-    langStrings : strings.heb
+    langStrings : strings.en
 }
 
 const mainReducer = (state = intialState , action = {} ) =>{

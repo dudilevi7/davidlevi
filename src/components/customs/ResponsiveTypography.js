@@ -7,9 +7,12 @@ theme = responsiveFontSizes(theme);
 
 const ResponsiveTypography = props=> {
   return (
-      <ThemeProvider theme={theme}>
+    <div>
+       <ThemeProvider theme={theme}>
         <Typography {...props}>{props.children}</Typography>
       </ThemeProvider>
+    </div>
+     
   );
 }
 export default ResponsiveTypography;

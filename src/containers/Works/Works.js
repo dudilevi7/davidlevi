@@ -12,7 +12,7 @@ const Works = props => {
     const strings = useSelector(state=>state.mainStore.langStrings.works);
 
     const works = language === 'English' ? enWorks : hebWorks;
-    const style = {height:'100vh'}
+    const style = {backgroundColor : 'whitesmoke'}
     return (
         <div id="worksID">
             <LDCard customStyle={style}>

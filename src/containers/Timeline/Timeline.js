@@ -22,7 +22,7 @@ const Timeline = props => {
     const strings = useSelector(state=>state.mainStore.langStrings.timeline);
 
     const style = {
-        backgroundColor :'whitesmoke',
+        backgroundColor :'white',
         display : 'flex',
         flexDirection : 'column',
         height:'100vh',
@@ -37,7 +37,7 @@ const Timeline = props => {
     return (
         <div id = "timeID">
             <LDCard customStyle = {style}>
-            <Typography className="title" variant = "h3">{strings.title}</Typography>
+                 <Typography className="title" variant = "h3">{strings.title}</Typography>
                     <TimelineMUI className="timelineContainer" align="alternate">
                         <TimelineItem onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}> 
                             <TimelineSeparator>

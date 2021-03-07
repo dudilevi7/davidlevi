@@ -6,19 +6,18 @@ import { CheckBox } from '@material-ui/icons';
 import { DLColors } from '../../constants/DLColors';
 import './About.css';
 import LDAdvantage from '../../components/customs/LDAdvantage';
-import stackImg from '../../imgs/myStack.png'
 import ResponsiveTypography from '../../components/customs/ResponsiveTypography';
 
-function importAll(r) {
+const importAll = r => {
 	let images = [];
-     r.keys().forEach((item, index) => { images[index] = r(item); });
+    r.keys().forEach((item, index) => { images[index] = r(item); });
 	return images
 }
 
 const progLangs = importAll(require.context('../../imgs/langs', false, /\.(png|jpe?g|svg)$/));
 
 const About = props => {
-    console.log(progLangs)
+    
     const language = useSelector(state=>state.mainStore.language);
     const strings = useSelector(state=>state.mainStore.langStrings.about);
    
@@ -27,10 +26,8 @@ const About = props => {
     const style = {
         display : 'flex',
         flexDirection : 'column',
-        justifyContent:'center',
         alignItems :'center',
         paddingBottom : '0px',
-        height : '100vh'
     }
     return (
         <div id = "aboutID">

@@ -23,6 +23,7 @@ const en = {
     },
     contact : {
         title : 'C O N T A C T',
+        body : "Leave deatils and we'll get back to you soon or send us message on WhatsApp - we're available :)",
         name : "Name",
         email : "Email",
         phone : "Phone",
@@ -90,6 +91,7 @@ const heb = {
     },
     contact : {
         title : <bdi>צ ו ר &nbsp;ק ש ר </bdi>,
+        body : <bdi>השאירו פרטים ונחזור אליכם בהקדם או שלחו הודעה בוואטסאפ - אנחנו זמינים :)</bdi>,
         name : "שם",
         email : "מייל",
         phone : "פלאפון",

@@ -15,14 +15,15 @@
 }
 .img1{
     display: block;
-    width: 50%;
+    width: 40%;
 }
 .img1mobile{
     display: none;
 }
 @media only screen and (max-width: 750px) {
+   
     .adTitle{
-        font-size: 50px;
+        font-size: 40px;
     }
     .adBtn{
         font-size: 13px;
@@ -33,6 +34,7 @@
     .img1mobile{
         display: block;
         align-self: center;
-        width: 70%;
+        margin-top: 10px;
+        width: 100%;
     }
 }

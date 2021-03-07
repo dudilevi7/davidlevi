@@ -7,6 +7,7 @@ import israelscreen from '../imgs/works/israelscreen.png';
 import ynscreen from '../imgs/works/ynscreen.png';
 import osiscreen from '../imgs/works/osiscreen.png';
 import wtfscreen from '../imgs/works/wtfscreen.png';
+import fc from '../imgs/works/findclass3.png'
 
 export const enWorks = [
     new Work('Proffesional landing page',
@@ -29,9 +30,16 @@ export const enWorks = [
     ,
     new Work('Game web app',
     "Who's that famous? ",
-    'My first work with React . An amazing quiz with special questions about famous people.',
+    'An amazing quiz with special questions about famous people.',
     '12/2019',['Front End','React','Bootstrap','npm libraries','Multi-Language'],
     'https://dudilevi7.github.io/whosthatfamous/',wtfscreen,wtflogo)
+    ,
+    new Work('Mobile application',
+    "FindClass",
+    'App for students audience that offer logistic solution of classrooms in colleges. The algorithm calculates and displays the available classes according to the academic schedule ',
+    '07/2019',['Full Stack','Java','Android','Firebase','Google sheets','Google Maps api','XML'],
+    'https://drive.google.com/file/d/1VpoEMu1jlsPNDiS393TDV-u0h7qqgFgL/view',fc,fc)
+
 ]
 
 export const hebWorks = [
@@ -58,4 +66,10 @@ export const hebWorks = [
     'משחק חידון עם שאלות מיוחדות על אנשים מפורסמים',
     '12/2019',['צד לקוח','React','Bootstrap','npm libraries','תמיכה בעברית ואנגלית'],
     'https://dudilevi7.github.io/whosthatfamous/',wtfscreen,wtflogo)
+    ,
+    new Work('אפליקציה לנייד',
+    "FindClass",
+    'אפליקציה לקהל הסטודנטים שמהוו פתרון לוגיסטי לכיתות לימוד בכיתה . האלגוריתם מחשב ומציג את הכיתות הפנויות לפי לוח השיעורים האקדמי',
+    '07/2019',['Full Stack','Java','Android','Firebase','Google sheets','Google Maps api','XML'],
+    'https://drive.google.com/file/d/1VpoEMu1jlsPNDiS393TDV-u0h7qqgFgL/view',fc,fc)
 ]
