@@ -25,7 +25,7 @@ const Ad = props => {
     
     return(
         <LDAdd customStyle = {adStyle}>
-            <div className = "adContainer">
+            <div>
                  <img className="img1mobile" alt = "img1mobile" src={developerImg}/>
                  <div className="adTitle">{strings.title}</div>
                  <ResponsiveTypography variant = "subtitle1">{strings.para}</ResponsiveTypography>
