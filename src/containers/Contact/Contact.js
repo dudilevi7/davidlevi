@@ -62,7 +62,7 @@ const Contact = props => {
         flexDirection : 'column',
         alignItems : 'center',
         backgroundColor: 'whitesmoke',
-        height: '100vh',
+        marginBottom : '50px',
         padding : '25px 3px 25px 3px',
         borderRadius:'0px'
     }
@@ -134,7 +134,6 @@ const Contact = props => {
           <Typography className="title" variant = "h3" gutterBottom>{strings.title}</Typography>
           <Typography variant="body2" >{strings.body}</Typography>
            <div className="contactContent">
-            
                   <LDTextField name ="name" type = "text" align={alignStyle} label={strings.name} onChange={textChangeHandler} bgcolor1="whitesmoke"/> 
                   <LDTextField name = "email" type = "email" align={alignStyle} label={strings.email} onChange={textChangeHandler} bgcolor1="whitesmoke"/>
                   <LDTextField name = "phone" type = "phone" align={alignStyle} label={strings.phone} onChange={textChangeHandler} bgcolor1="whitesmoke"/>
@@ -142,14 +141,15 @@ const Contact = props => {
                   <LDTextField name ="message" type = "text" multiline rows="3" align={alignStyle} label={strings.message}  onChange={textChangeHandler} bgcolor1="whitesmoke"/>
                   <LDButton size="small" color="white" bgcolor1="#2F2F2F" bgcolor2="#1B1B1B" onClick={onSubmitForm}>{strings.btn}</LDButton>
                {errors.length>0 &&
-               <div className = "errorContainer">
-                      {errors.map((error,index) => {
-                        return <LDError key={index} language={language}>
-                                   <Error fontSize='small' htmlColor='white'/>
-                                   {error}
-                               </LDError>
-                      })}
-                 </div>}
+                  <div className = "errorContainer">
+                          {errors.map((error,index) => {
+                            return <LDError key={index} language={language}>
+                                      <Error fontSize='small' htmlColor='white'/>
+                                      {error}
+                                  </LDError>
+                          })}
+                    </div>
+               }
                  
            </div>
            {alert==='success' ? 

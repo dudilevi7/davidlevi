@@ -9,7 +9,6 @@ import { setLanguage } from '../../store/actions';
 import MenuIcon from '@material-ui/icons/Menu';
 import { DLColors } from '../../constants/DLColors';
 import { Drawer } from '@material-ui/core';
-import { PHONE_NUMBER } from '../../env';
 import './LDHeader.css';
 
 const LDHeader = () => {
@@ -18,9 +17,7 @@ const LDHeader = () => {
     const updateLanguage = (lang) => {
         dispatch(setLanguage(lang));
     }
-    const logoStyle = {
-       
-    }
+   
     return (
         <div className="headerContainer">
                  <img className="logoImg" style={{cursor : 'pointer'}} src={logo} alt= "logo" 
@@ -32,7 +29,7 @@ const LDHeader = () => {
                 <img className="langImg" onClick = {updateLanguage.bind(this,"Hebrew")} src= {hebImg} alt="hebrew"/>
                 <img className="langImg" onClick = {updateLanguage.bind(this,"English")} src= {enImg} alt="english"/>
                 <div className = "phone">
-                   <a href = {`tel:${PHONE_NUMBER}`}>
+                   <a href = {`tel:${process.env.REACT_APP_PHONE_NUMBER}`}>
                        <Phone htmlColor = "white" fontSize="small"/>
                     </a>
                 </div>
